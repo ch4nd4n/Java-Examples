@@ -1,0 +1,9 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<mapping package="com.chandankumar.sprhib.model" />
+		<mapping class="com.chandankumar.sprhib.model.AppUser"/>
+	</session-factory>
+</hibernate-configuration>
