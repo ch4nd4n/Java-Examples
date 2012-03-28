@@ -14,17 +14,15 @@ public class AppUserDaoHibernateTest extends AbstractDaoTest{
 	@Autowired
 	private AppUserDao appUserDao;
 	@Test
-	public void testCreate() {
+	public void testCreateAndFindById() {
 		AppUser appUser = new AppUser();
 		appUser.setName("Junit test");
 		appUser = appUserDao.save(appUser);
-		Assert.assertNotNull(appUser.getId());
-		logger.debug(appUser.getId());
+		Long id = appUser.getId();
+		Assert.assertNotNull(id);
+		logger.debug(id);
+		appUser = null;
+		appUser = appUserDao.findById(id);
+		Assert.assertNotNull(appUser);
 	}
-
-	@Test
-	public void testFindById() {
-		fail("Not yet implemented");
-	}
-
 }
